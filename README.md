@@ -1,29 +1,25 @@
-# vimi-ui
+<p align="center">
+  <a href="">
+    <a href="">
+        <img width="200" height="167" src="https://i.loli.net/2020/09/10/ETG4cPSgFdCxWZw.png" />
+    </a>
+  </a>
+</p>
 
-## Project setup
-```
-npm install
-```
+<h1 align="center">vimi-ui</h1>
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+<h3 align="center">A Vue.js 2.0 UI Toolkit for Web</h3>
 
-### Compiles and minifies for production
-```
-npm run build
-```
+<!-- English | [简体中文](./README-zh_CN.md) -->
 
-### Run your unit tests
-```
-npm run test:unit
+## Install
+
+```bash
+npm install vimi-ui --S
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Quick Start
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Development
+
+## Todo List
