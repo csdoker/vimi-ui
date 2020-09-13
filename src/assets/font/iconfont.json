@@ -1,0 +1,100 @@
+{
+  "id": "2063504",
+  "name": "vimi",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "A Vue.js 2.0 UI Toolkit for Web",
+  "glyphs": [
+    {
+      "icon_id": "13519310",
+      "name": "arrow-left",
+      "font_class": "arrow-left",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "13519312",
+      "name": "arrow-right",
+      "font_class": "arrow-right",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    },
+    {
+      "icon_id": "13519313",
+      "name": "arrow-up",
+      "font_class": "arrow-up",
+      "unicode": "e637",
+      "unicode_decimal": 58935
+    },
+    {
+      "icon_id": "13519315",
+      "name": "arrow-down",
+      "font_class": "arrow-down",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "13519326",
+      "name": "caret-left",
+      "font_class": "caret-left",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    },
+    {
+      "icon_id": "13519328",
+      "name": "caret-right",
+      "font_class": "caret-right",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "13519329",
+      "name": "caret-top",
+      "font_class": "caret-top",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
+    },
+    {
+      "icon_id": "13519330",
+      "name": "caret-bottom",
+      "font_class": "caret-bottom",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    },
+    {
+      "icon_id": "13519337",
+      "name": "check",
+      "font_class": "check",
+      "unicode": "e63d",
+      "unicode_decimal": 58941
+    },
+    {
+      "icon_id": "13519349",
+      "name": "close",
+      "font_class": "close",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "13519363",
+      "name": "d-arrow-right",
+      "font_class": "d-arrow-right",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "13519367",
+      "name": "d-arrow-left",
+      "font_class": "d-arrow-left",
+      "unicode": "e64d",
+      "unicode_decimal": 58957
+    },
+    {
+      "icon_id": "13519434",
+      "name": "loading",
+      "font_class": "loading",
+      "unicode": "e65b",
+      "unicode_decimal": 58971
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+$input-height: 32px;
+$border-radius: 4px;
+$box-shadow-color: rgba(0, 0, 0, 0.5);
+$red: #f1453d;
+$grey: #eee;
+$blue: #4a90e2;
+
+$font-size: 14px;
+$small-font-size: 12px;
+$button-height: 32px;
+$button-bg: white;
+$button-active-bg: #eee;
+$border-radius: 4px;
+$color: #333;
+$light-color: #666;
+$border-color: #999;
+$border-color-light: lighten($border-color, 30%);
+$border-color-hover: #666;
+
+.box-shadow {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+@mixin box-shadow2 {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin spin {
+  animation: spin 2s infinite linear;
+}

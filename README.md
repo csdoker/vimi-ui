@@ -15,11 +15,11 @@
 ## Install
 
 ```bash
-npm install vimi-ui --S
+npm install vimi-ui -S
 ```
 
-## Quick Start
+<!-- ## Quick Start
 
 ## Development
 
-## Todo List
+## Todo List -->
