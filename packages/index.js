@@ -20,7 +20,11 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
 
+export {
+  Icon,
+  Button
+}
+
 export default {
-  install,
-  ...components
+  install
 }

@@ -1,9 +1,9 @@
 'use strict'
-// const path = require('path')
+const path = require('path')
 
-// function resolve(dir) {
-//   return path.join(__dirname, dir)
-// }
+function resolve (dir) {
+  return path.join(__dirname, dir)
+}
 
 module.exports = {
   pages: {
@@ -12,11 +12,12 @@ module.exports = {
       template: 'public/index.html',
       filename: 'index.html'
     }
-  }
-  // chainWebpack: config => {
-  //   config.resolve.alias
-  //     .set('@', path.resolve('examples'))
-  //     .set('~', path.resolve('packages'))
+  },
+  chainWebpack: config => {
+    config.resolve.alias
+      .set('@', resolve('packages'))
+      .set('@assets', resolve('src/assets'))
+      .set('@styles', resolve('src/assets/styles'))
 
   //   config.module
   //     .rule('js')
@@ -27,5 +28,5 @@ module.exports = {
   //     .tap(options => {
   //       return options
   //     })
-  // }
+  }
 }
