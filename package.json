@@ -3,7 +3,8 @@
   "version": "0.1.5",
   "description": "A Vue.js 2.0 UI Toolkit for Web",
   "main": "lib/vimi-ui.umd.min.js",
-  "files": ["lib"],
+  "style": "lib/vimi-ui.css",
+  "files": ["lib", "packages", "src"],
   "keywords": [
     "vimi-ui"
   ],

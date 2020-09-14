@@ -5,7 +5,6 @@ import App from './App.vue'
 // Vue.use(vimi)
 
 // import vimi from 'vimi-ui'
-// import 'vimi-ui/lib/vimi-ui.css'
 // Vue.use(vimi)
 
 // import { Button } from 'vimi-ui'
