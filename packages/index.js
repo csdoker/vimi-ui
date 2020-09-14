@@ -9,7 +9,6 @@ const components = {
 
 const install = function (Vue, opts = {}) {
   if (install.installed) return
-  install.installed = true
   Object.values(components).forEach(component => {
     Vue.component(component.name, component)
   })
