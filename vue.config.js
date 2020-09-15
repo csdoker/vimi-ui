@@ -15,18 +15,19 @@ module.exports = {
   },
   chainWebpack: config => {
     config.resolve.alias
-      .set('@', resolve('packages'))
-      .set('@assets', resolve('src/assets'))
-      .set('@styles', resolve('src/assets/styles'))
+      .set('~', resolve('packages'))
+      .set('@', resolve('examples'))
+      .set('assets', resolve('src/assets'))
+      .set('styles', resolve('src/assets/styles'))
 
-  //   config.module
-  //     .rule('js')
-  //     .include.add(/packages/).end()
-  //     .include.add(/examples/).end()
-  //     .use('babel')
-  //     .loader('babel-loader')
-  //     .tap(options => {
-  //       return options
-  //     })
+    config.module
+      .rule('js')
+      .include.add(/packages/).end()
+      .include.add(/examples/).end()
+      .use('babel')
+      .loader('babel-loader')
+      .tap(options => {
+        return options
+      })
   }
 }

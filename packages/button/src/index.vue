@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import VIcon from '@/icon/src/index.vue'
+import VIcon from '~/icon/src/index.vue'
 
 export default {
   name: 'VButton',
@@ -39,7 +39,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@styles/_var";
+@import "styles/_var";
 
 .v-button {
   font-size: $font-size;
