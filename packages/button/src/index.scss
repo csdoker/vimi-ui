@@ -1,0 +1,44 @@
+@import 'styles/_var';
+@import 'styles/color';
+
+$default-font-color: #606266;
+$default-background-color: #FFF;
+$default-active-color: #3a8ee6;
+
+.v-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  height: 32px;
+  line-height: 20px;
+  font-size: 14px;
+  color: $default-font-color;
+  padding: 0 1em;
+  border-radius: $border-radius;
+  border: 1px solid $border-color-base;
+  background-color: $default-background-color;
+  outline: none;
+  cursor: pointer;
+  > .v-icon {
+    margin-right: 0.2em;
+  }
+  .loading {
+    @include spin;
+  }
+  &:hover {
+    color: $primary-color;
+    border-color: $primary-color;
+  }
+  &:focus {
+    color: $primary-color;
+    border-color: $primary-color;
+  }
+  &:active {
+    color: $default-active-color;
+    border-color: $default-active-color;
+  }
+  & + & {
+    margin-left: 4px;
+  }
+}
