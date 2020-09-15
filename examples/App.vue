@@ -2,7 +2,8 @@
   <div id="app">
     <div class="container">
       <h2>Button 按钮</h2>
-      <v-button :loading="true">按钮</v-button>
+      <v-button>Default</v-button>
+      <v-button :loading="true">Default</v-button>
     </div>
   </div>
 </template>
@@ -37,5 +38,4 @@ export default {
 .container h2 {
   margin: 20px 0;
 }
-
 </style>

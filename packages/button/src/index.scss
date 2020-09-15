@@ -1,4 +1,4 @@
-@import 'styles/_var';
+@import 'styles/common';
 @import 'styles/color';
 
 $default-font-color: #606266;
@@ -18,8 +18,10 @@ $default-active-color: #3a8ee6;
   border-radius: $border-radius;
   border: 1px solid $border-color-base;
   background-color: $default-background-color;
-  outline: none;
+  transition: .1s;
   cursor: pointer;
+  outline: none;
+  user-select: none;
   > .v-icon {
     margin-right: 0.2em;
   }
@@ -39,6 +41,10 @@ $default-active-color: #3a8ee6;
     border-color: $default-active-color;
   }
   & + & {
-    margin-left: 4px;
+    margin-left: 8px;
   }
+  &.v-button-default {}
+  &.v-button-primary {}
+  &.v-button-dashed {}
+  &.v-button-danger {}
 }

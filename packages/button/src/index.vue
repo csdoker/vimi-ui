@@ -1,13 +1,14 @@
 <template>
   <button
     class="v-button"
+    :class="buttonClass"
     @click="$emit('click')"
   >
     <v-icon class="v-icon" v-if="icon && !loading" :name="icon"></v-icon>
     <v-icon class="loading v-icon" v-if="loading" name="loading"></v-icon>
-    <div class="v-button-content">
+    <span class="v-button-content">
       <slot></slot>
-    </div>
+    </span>
   </button>
 </template>
 
@@ -20,12 +21,24 @@ export default {
     'v-icon': VIcon
   },
   props: {
+    type: {
+      type: String,
+      default: 'default'
+    },
     icon: {
       type: String
     },
     loading: {
       type: Boolean,
       default: false
+    }
+  },
+  computed: {
+    buttonClass () {
+      const types = ['default', 'primary', 'dashed', 'danger']
+      return {
+        [`v-button-${this.type}`]: types.includes(this.type)
+      }
     }
   }
 }
