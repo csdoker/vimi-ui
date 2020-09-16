@@ -1,9 +1,23 @@
-@import 'styles/common';
-@import 'styles/color';
+@import "styles/common";
+@import "styles/color";
 
 $default-font-color: #606266;
-$default-background-color: #FFF;
+$default-background-color: #fff;
+$default-hover-color: $primary-color;
+$default-focus-color: $primary-color;
 $default-active-color: #3a8ee6;
+
+$primary-font-color: #fff;
+$primary-background-color: $primary-color;
+$primary-hover-color: #66b1ff;
+$primary-focus-color: #66b1ff;
+$primary-active-color: #3a8ee6;
+
+$danger-font-color: #fff;
+$danger-background-color: $danger-color;
+$danger-hover-color: #f78989;
+$danger-focus-color: #f78989;
+$danger-active-color: #dd6161;
 
 .v-button {
   display: inline-flex;
@@ -18,7 +32,7 @@ $default-active-color: #3a8ee6;
   border-radius: $border-radius;
   border: 1px solid $border-color-base;
   background-color: $default-background-color;
-  transition: .1s;
+  transition: 0.1s;
   cursor: pointer;
   outline: none;
   user-select: none;
@@ -28,23 +42,64 @@ $default-active-color: #3a8ee6;
   .loading {
     @include spin;
   }
+  & + & {
+    margin-left: 8px;
+  }
   &:hover {
-    color: $primary-color;
-    border-color: $primary-color;
+    color: $default-hover-color;
+    border-color: $default-hover-color;
   }
   &:focus {
-    color: $primary-color;
-    border-color: $primary-color;
+    color: $default-focus-color;
+    border-color: $default-focus-color;
+    outline: none;
   }
   &:active {
     color: $default-active-color;
     border-color: $default-active-color;
+    outline: none;
   }
-  & + & {
-    margin-left: 8px;
+  &.v-button-primary {
+    color: $primary-font-color;
+    background-color: $primary-background-color;
+    border-color: $primary-background-color;
+    &:hover {
+      color: $primary-font-color;
+      background-color: $primary-hover-color;
+      border-color: $primary-hover-color;
+    }
+    &:focus {
+      color: $primary-font-color;
+      background-color: $primary-focus-color;
+      border-color: $primary-focus-color;
+    }
+    &:active {
+      color: $primary-font-color;
+      background-color: $primary-active-color;
+      border-color: $primary-active-color;
+    }
   }
-  &.v-button-default {}
-  &.v-button-primary {}
-  &.v-button-dashed {}
-  &.v-button-danger {}
+  &.v-button-dashed {
+    border-style: dashed;
+  }
+  &.v-button-danger {
+    color: $danger-font-color;
+    background-color: $danger-background-color;
+    border-color: $danger-background-color;
+    &:hover {
+      color: $danger-font-color;
+      background-color: $danger-hover-color;
+      border-color: $danger-hover-color;
+    }
+    &:focus {
+      color: $danger-font-color;
+      background-color: $danger-focus-color;
+      border-color: $danger-focus-color;
+    }
+    &:active {
+      color: $danger-font-color;
+      background-color: $danger-active-color;
+      border-color: $danger-active-color;
+    }
+  }
 }
