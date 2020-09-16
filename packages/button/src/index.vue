@@ -3,6 +3,7 @@
     class="v-button"
     :class="buttonClass"
     @click="$emit('click')"
+    :disabled="disabled || loading"
   >
     <v-icon class="v-icon" v-if="icon && !loading" :name="icon"></v-icon>
     <v-icon class="loading v-icon" v-if="loading" name="loading"></v-icon>
@@ -31,13 +32,18 @@ export default {
     loading: {
       type: Boolean,
       default: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
     buttonClass () {
       const types = ['default', 'primary', 'dashed', 'danger']
       return {
-        [`v-button-${this.type}`]: types.includes(this.type)
+        [`v-button-${this.type}`]: types.includes(this.type),
+        disabled: this.disabled
       }
     }
   }
