@@ -18,6 +18,12 @@
         </v-button-group>
       </div>
     </div>
+    <div class="container">
+      <h2>Switch 开关</h2>
+      <div class="item">
+        <!-- <v-switch></v-switch> -->
+      </div>
+    </div>
   </div>
 </template>
 

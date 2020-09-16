@@ -2,11 +2,13 @@ import '../src/assets/font/iconfont.css'
 import Icon from './icon'
 import Button from './button'
 import ButtonGroup from './button-group'
+import Switch from './switch'
 
 const components = {
   Icon,
   Button,
-  ButtonGroup
+  ButtonGroup,
+  Switch
 }
 
 const install = function (Vue, opts = {}) {
@@ -25,7 +27,8 @@ export {
   install,
   Icon,
   Button,
-  ButtonGroup
+  ButtonGroup,
+  Switch
 }
 
 export default {
