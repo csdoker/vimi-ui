@@ -2,12 +2,21 @@
   <div id="app">
     <div class="container">
       <h2>Button 按钮</h2>
-      <v-button type="primary">Primary</v-button>
-      <v-button>Default</v-button>
-      <v-button type="dashed">Dashed</v-button>
-      <v-button type="danger">Danger</v-button>
-      <v-button :disabled="true">Disabled</v-button>
-      <v-button :loading="true">Default</v-button>
+      <div class="item">
+        <v-button type="primary">Primary</v-button>
+        <v-button>Default</v-button>
+        <v-button type="dashed">Dashed</v-button>
+        <v-button type="danger">Danger</v-button>
+        <v-button :disabled="true">Disabled</v-button>
+        <v-button :loading="true">Default</v-button>
+      </div>
+      <div class="item">
+        <v-button-group>
+          <v-button>上一页</v-button>
+          <v-button>更多</v-button>
+          <v-button>下一页</v-button>
+        </v-button-group>
+      </div>
     </div>
   </div>
 </template>
@@ -41,5 +50,8 @@ export default {
 }
 .container h2 {
   margin: 20px 0;
+}
+.container .item {
+  margin-bottom: 10px;
 }
 </style>

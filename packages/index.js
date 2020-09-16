@@ -1,10 +1,12 @@
 import '../src/assets/font/iconfont.css'
 import Icon from './icon'
 import Button from './button'
+import ButtonGroup from './button-group'
 
 const components = {
   Icon,
-  Button
+  Button,
+  ButtonGroup
 }
 
 const install = function (Vue, opts = {}) {
@@ -22,7 +24,8 @@ if (typeof window !== 'undefined' && window.Vue) {
 export {
   install,
   Icon,
-  Button
+  Button,
+  ButtonGroup
 }
 
 export default {

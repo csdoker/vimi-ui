@@ -1,0 +1,39 @@
+@import "styles/common";
+
+.v-button-group {
+  display: inline-flex;
+  vertical-align: middle;
+  > .v-button {
+    border-radius: 0;
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
+    &:first-child {
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+    }
+    &:last-child {
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      position: relative;
+      z-index: 1;
+    }
+    &.v-button-primary,
+    &.v-button-danger {
+      &:first-child {
+        border-right-color: rgba(255, 255, 255, 0.5);
+      }
+      &:last-child {
+        border-left-color: rgba(255, 255, 255, 0.5);
+      }
+      &:not(:first-child):not(:last-child) {
+        border-right-color: rgba(255, 255, 255, 0.5);
+        border-left-color: rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+}
