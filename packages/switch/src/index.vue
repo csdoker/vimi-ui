@@ -1,5 +1,5 @@
 <template>
-  <div class="v-switch">
+  <div class="v-switch" :class="switchClass" @click="change">
     <input type="checkbox" class="v-switch-input" />
     <span class="v-switch-core"></span>
   </div>
@@ -8,7 +8,30 @@
 <script>
 export default {
   name: 'VSwitch',
-  props: {}
+  props: {
+    value: {
+      type: Boolean,
+      default: false
+    }
+  },
+  data () {
+    return {
+      isChecked: this.value
+    }
+  },
+  computed: {
+    switchClass () {
+      return {
+        checked: this.isChecked
+      }
+    }
+  },
+  methods: {
+    change () {
+      this.isChecked = !this.isChecked
+      this.$emit('input', this.isChecked)
+    }
+  }
 }
 </script>
 

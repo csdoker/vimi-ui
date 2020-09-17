@@ -21,7 +21,7 @@
     <div class="container">
       <h2>Switch 开关</h2>
       <div class="item">
-        <!-- <v-switch></v-switch> -->
+        <v-switch v-model="switchValue" @input="handleSwitch"></v-switch>
       </div>
     </div>
   </div>
@@ -29,7 +29,17 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data () {
+    return {
+      switchValue: false
+    }
+  },
+  methods: {
+    handleSwitch (value) {
+      console.log(value)
+    }
+  }
 }
 </script>
 
