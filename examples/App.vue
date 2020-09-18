@@ -21,7 +21,9 @@
     <div class="container">
       <h2>Switch 开关</h2>
       <div class="item">
-        <v-switch v-model="switchValue" @input="handleSwitch"></v-switch>
+        <v-switch v-model="switchValue1" :active-value="'active'" :inactive-value="'inactiveValue'" @input="handleSwitch1" style="margin-right: 20px;"></v-switch>
+        <v-switch v-model="switchValue1" disabled @input="handleSwitch2" style="margin-right: 20px;"></v-switch>
+        <v-switch v-model="switchValue2" disabled></v-switch>
       </div>
     </div>
   </div>
@@ -32,12 +34,16 @@ export default {
   name: 'App',
   data () {
     return {
-      switchValue: false
+      switchValue1: false,
+      switchValue2: true
     }
   },
   methods: {
-    handleSwitch (value) {
-      console.log(value)
+    handleSwitch1 (value) {
+      console.log(this.switchValue1)
+    },
+    handleSwitch2 () {
+      console.log(this.switchValue2)
     }
   }
 }
@@ -68,6 +74,7 @@ export default {
   margin: 20px 0;
 }
 .container .item {
+  display: flex;
   margin-bottom: 10px;
 }
 </style>

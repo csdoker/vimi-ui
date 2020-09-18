@@ -51,4 +51,10 @@
       }
     }
   }
+  &.disabled {
+    opacity: .6;
+    .v-switch-core {
+      cursor: not-allowed;
+    }
+  }
 }
