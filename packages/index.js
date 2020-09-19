@@ -3,12 +3,14 @@ import Icon from './icon'
 import Button from './button'
 import ButtonGroup from './button-group'
 import Switch from './switch'
+import Input from './input'
 
 const components = {
   Icon,
   Button,
   ButtonGroup,
-  Switch
+  Switch,
+  Input
 }
 
 const install = function (Vue, opts = {}) {
@@ -28,7 +30,8 @@ export {
   Icon,
   Button,
   ButtonGroup,
-  Switch
+  Switch,
+  Input
 }
 
 export default {

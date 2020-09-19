@@ -27,6 +27,14 @@
         <v-switch v-model="switchValue4" disabled></v-switch>
       </div>
     </div>
+    <div class="container">
+      <h2>Input 输入框</h2>
+      <div class="item">
+        <v-input v-model="inputValue" style="width: 200px; margin-right: 20px;"></v-input>
+        <v-input disabled style="width: 200px; margin-right: 20px;"></v-input>
+        <v-input maxlength="5" placeholder="最大输入长度为5个字符" style="width: 200px"></v-input>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -36,9 +44,10 @@ export default {
   data () {
     return {
       switchValue1: false,
-      switchValue2: false,
+      switchValue2: true,
       switchValue3: false,
-      switchValue4: true
+      switchValue4: true,
+      inputValue: 'vimi'
     }
   },
   methods: {
