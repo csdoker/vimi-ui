@@ -1,6 +1,6 @@
 <template>
   <label class="v-switch" :class="{ checked: this.checked, disabled: this.disabled }">
-    <span class="v-switch-core"></span>
+    <span class="v-switch-core" :style="styles"></span>
     <input
       type="checkbox"
       class="v-switch-input"
@@ -29,6 +29,14 @@ export default {
       type: [Boolean, String, Number],
       default: false
     },
+    activeColor: {
+      type: String,
+      default: '#409EFF'
+    },
+    inactiveColor: {
+      type: String,
+      default: '#dcdfe6'
+    },
     disabled: {
       type: Boolean,
       default: false
@@ -37,11 +45,22 @@ export default {
   computed: {
     checked () {
       return this.value === this.activeValue
+    },
+    styles () {
+      const color = this.checked ? this.activeColor : this.inactiveColor
+      return {
+        borderColor: color,
+        backgroundColor: color
+      }
     }
   },
   methods: {
+    getValue () {
+      return !this.checked ? this.activeValue : this.inactiveValue
+    },
     handleChange (value) {
-      this.$emit('input', !this.checked ? this.activeValue : this.inactiveValue)
+      this.$emit('input', this.getValue())
+      this.$emit('change', this.getValue())
     }
   }
 }

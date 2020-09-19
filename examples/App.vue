@@ -21,9 +21,10 @@
     <div class="container">
       <h2>Switch 开关</h2>
       <div class="item">
-        <v-switch v-model="switchValue1" :active-value="'active'" :inactive-value="'inactiveValue'" @input="handleSwitch1" style="margin-right: 20px;"></v-switch>
-        <v-switch v-model="switchValue1" disabled @input="handleSwitch2" style="margin-right: 20px;"></v-switch>
-        <v-switch v-model="switchValue2" disabled></v-switch>
+        <v-switch v-model="switchValue1" active-value="active" inactive-value="inactiveValue" @change="handleSwitch1" style="margin-right: 20px;"></v-switch>
+        <v-switch v-model="switchValue2" active-color="#67C23A" inactive-color="#F56C6C" style="margin-right: 20px;"></v-switch>
+        <v-switch v-model="switchValue3" disabled style="margin-right: 20px;"></v-switch>
+        <v-switch v-model="switchValue4" disabled></v-switch>
       </div>
     </div>
   </div>
@@ -35,15 +36,14 @@ export default {
   data () {
     return {
       switchValue1: false,
-      switchValue2: true
+      switchValue2: false,
+      switchValue3: false,
+      switchValue4: true
     }
   },
   methods: {
     handleSwitch1 (value) {
       console.log(this.switchValue1)
-    },
-    handleSwitch2 () {
-      console.log(this.switchValue2)
     }
   }
 }
