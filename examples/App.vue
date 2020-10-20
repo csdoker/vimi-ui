@@ -35,6 +35,17 @@
         <v-input maxlength="5" placeholder="最大输入长度为5个字符" style="width: 200px"></v-input>
       </div>
     </div>
+    <div class="container">
+      <h2>Tabs 选项卡</h2>
+      <div class="item">
+        <v-tabs>
+          <v-tab-panel label="选项卡1">内容1</v-tab-panel>
+          <v-tab-panel label="选项卡2">内容2</v-tab-panel>
+          <v-tab-panel label="选项卡3">内容3</v-tab-panel>
+          <v-tab-panel label="选项卡4">内容4</v-tab-panel>
+        </v-tabs>
+      </div>
+    </div>
   </div>
 </template>
 
