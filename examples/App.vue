@@ -37,11 +37,11 @@
     </div>
     <div class="container">
       <h2>Tabs 选项卡</h2>
-      <v-tabs>
-        <v-tab-panel label="选项卡1">内容1</v-tab-panel>
-        <v-tab-panel label="选项卡2">内容2</v-tab-panel>
-        <v-tab-panel label="选项卡3">内容3</v-tab-panel>
-        <v-tab-panel label="选项卡4">内容4</v-tab-panel>
+      <v-tabs value="panel1">
+        <v-tab-panel label="选项卡1" name="panel1">内容1</v-tab-panel>
+        <v-tab-panel label="选项卡2" name="panel2">内容2</v-tab-panel>
+        <v-tab-panel label="选项卡3" name="panel3">内容3</v-tab-panel>
+        <v-tab-panel label="选项卡4" name="panel4">内容4</v-tab-panel>
       </v-tabs>
     </div>
   </div>

@@ -1,13 +1,13 @@
 .v-tabs {
     overflow: hidden;
-    .v-tab-header {
+    .v-tab-navs {
       position: relative;
       display: flex;
       font-size: 13px;
       line-height: 30px;
       font-weight: 500;
       border-bottom: 2px solid #ddd;
-      .v-tab-item {
+      .v-tab-nav {
         display: flex;
         align-items: center;
         margin-right: 30px;
@@ -25,12 +25,12 @@
           cursor: default;
         }
       }
-      .v-tab-line {
+      .v-tab-bar {
         position: absolute;
         top: 100%;
         height: 2px;
         background: #333;
-        transition: all 0.3s;
+        transition: transform 0.3s;
       }
     }
     .v-tab-panels {
