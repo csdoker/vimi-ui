@@ -32,9 +32,6 @@ export default {
     return {
       visible: false
     }
-  },
-  mounted () {
-    this.tabs.initTabs()
   }
 }
 </script>

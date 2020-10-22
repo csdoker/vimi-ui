@@ -44,27 +44,24 @@ export default {
   data () {
     return {
       navs: [],
+      panels: [],
       activeKey: this.value
     }
   },
   methods: {
-    getTabs () {
-      return this.$children.filter(item => item.$options.name === 'VTabPanel')
-    },
     initTabs () {
+      this.getPanels()
+      this.getNavs()
       this.getActiveKey()
-      this.updateNav()
       this.updatePanel()
       this.updateBar()
     },
-    getActiveKey () {
-      if (!this.activeKey) {
-        this.activeKey = this.getTabs()[0].name
-      }
+    getPanels () {
+      this.panels = this.$children.filter(item => item.$options.name === 'VTabPanel')
     },
-    updateNav () {
+    getNavs () {
       this.navs = []
-      this.getTabs().forEach((panel, index) => {
+      this.panels.forEach((panel, index) => {
         this.navs.push({
           label: panel.label,
           name: panel.name || index,
@@ -72,12 +69,17 @@ export default {
         })
       })
     },
+    getActiveKey () {
+      if (!this.activeKey) {
+        this.activeKey = this.navs[0].name
+      }
+    },
     updatePanel () {
       this.$nextTick(() => {
         const index = this.navs.findIndex(nav => nav.name === this.activeKey)
-        if (index >= 0) {
+        if (index !== -1) {
           this.$refs.tabPanels.style.transform = `translateX(-${index * 100}%)`
-          this.getTabs().forEach(
+          this.panels.forEach(
             panel => (panel.visible = panel.name === this.activeKey)
           )
         }
@@ -87,7 +89,7 @@ export default {
       this.$nextTick(() => {
         const index = this.navs.findIndex(nav => nav.name === this.activeKey)
         const $$tabNavs = this.$refs.tabNavs.querySelectorAll('.v-tab-nav')
-        if (index >= 0) {
+        if (index !== -1) {
           const { offsetWidth, offsetLeft } = $$tabNavs[index]
           this.$refs.tabBar.style.width = `${offsetWidth}px`
           this.$refs.tabBar.style.transform = `translateX(${offsetLeft}px)`
@@ -99,6 +101,9 @@ export default {
         this.activeKey = this.navs[index].name
       }
     }
+  },
+  mounted () {
+    this.initTabs()
   }
 }
 </script>
