@@ -1,16 +1,14 @@
 <template>
-  <div class="tabs">
-    <div class="tab-header">
-      <span class="tab-item">选项卡1</span>
-      <span class="tab-item">选项卡2</span>
-      <span class="tab-item">选项卡3</span>
-      <span class="tab-item">选项卡4</span>
+  <div class="v-tabs">
+    <div class="v-tab-header">
+      <span class="v-tab-item active">选项卡1</span>
+      <span class="v-tab-item">选项卡2</span>
+      <span class="v-tab-item">选项卡3</span>
+      <span class="v-tab-item">选项卡4</span>
+      <span class="v-tab-line"></span>
     </div>
-    <div class="tab-panels">
-      <div class="tab-panel">内容1</div>
-      <div class="tab-panel">内容2</div>
-      <div class="tab-panel">内容3</div>
-      <div class="tab-panel">内容4</div>
+    <div class="v-tab-panels">
+      <slot></slot>
     </div>
   </div>
 </template>
@@ -21,4 +19,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import './index.scss';
+</style>

@@ -5,6 +5,7 @@ import ButtonGroup from './button-group'
 import Switch from './switch'
 import Input from './input'
 import Tabs from './tabs'
+import TabPanel from './tab-panel'
 
 const components = {
   Icon,
@@ -12,7 +13,8 @@ const components = {
   ButtonGroup,
   Switch,
   Input,
-  Tabs
+  Tabs,
+  TabPanel
 }
 
 const install = function (Vue, opts = {}) {
@@ -34,7 +36,8 @@ export {
   ButtonGroup,
   Switch,
   Input,
-  Tabs
+  Tabs,
+  TabPanel
 }
 
 export default {
