@@ -45,7 +45,7 @@
       </div>
       <v-tabs :value="tabValue">
         <v-tab-panel label="选项卡1" name="panel1">内容1</v-tab-panel>
-        <v-tab-panel label="选项卡2" name="panel2">内容2</v-tab-panel>
+        <v-tab-panel label="选项卡2" name="panel2" disabled>内容2</v-tab-panel>
         <v-tab-panel label="选项卡3" name="panel3">内容3</v-tab-panel>
         <v-tab-panel label="选项卡4" name="panel4">内容4</v-tab-panel>
       </v-tabs>

@@ -3,7 +3,7 @@
     <div class="v-tab-navs" ref="tabNavs">
       <span
         class="v-tab-nav"
-        :class="{'active': item.name === activeKey}"
+        :class="{'active': item.name === activeKey, 'disabled': item.disabled}"
         v-for="(item, index) in navs"
         :key="index"
         @click="handleChange(index)"
@@ -30,7 +30,10 @@ export default {
   },
   watch: {
     value (val) {
-      this.activeKey = val
+      const index = this.navs.findIndex(nav => nav.name === val)
+      if (!this.navs[index].disabled) {
+        this.activeKey = val
+      }
     },
     activeKey () {
       this.updatePanel()
@@ -63,7 +66,8 @@ export default {
       this.getTabs().forEach((panel, index) => {
         this.navs.push({
           label: panel.label,
-          name: panel.name || index
+          name: panel.name || index,
+          disabled: panel.disabled
         })
       })
     },
@@ -90,7 +94,9 @@ export default {
       })
     },
     handleChange (index) {
-      this.activeKey = this.navs[index].name
+      if (!this.navs[index].disabled) {
+        this.activeKey = this.navs[index].name
+      }
     }
   }
 }
