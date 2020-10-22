@@ -34,10 +34,7 @@ export default {
   },
   watch: {
     value (val) {
-      const index = this.navs.findIndex(nav => nav.name === val)
-      if (!this.navs[index].disabled) {
-        this.activeKey = val
-      }
+      this.activeKey = val
     },
     activeKey () {
       this.updatePanel()
