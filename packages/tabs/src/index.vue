@@ -11,7 +11,7 @@
       >
       <span class="v-tab-bar" ref="tabBar"></span>
     </div>
-    <div class="v-tab-panels animated" ref="tabPanels">
+    <div class="v-tab-panels" :class="{'animated': animate}" ref="tabPanels">
       <slot></slot>
     </div>
   </div>
@@ -26,6 +26,10 @@ export default {
   props: {
     value: {
       type: [String, Number]
+    },
+    animate: {
+      type: Boolean,
+      default: true
     }
   },
   watch: {
