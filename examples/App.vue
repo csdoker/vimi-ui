@@ -37,7 +37,13 @@
     </div>
     <div class="container">
       <h2>Tabs 选项卡</h2>
-      <v-tabs value="panel1">
+      <div class="item">
+        <v-button @click="handleSelectTabs('panel1')">选项卡1</v-button>
+        <v-button @click="handleSelectTabs('panel2')">选项卡2</v-button>
+        <v-button @click="handleSelectTabs('panel3')">选项卡3</v-button>
+        <v-button @click="handleSelectTabs('panel4')">选项卡4</v-button>
+      </div>
+      <v-tabs :value="tabValue">
         <v-tab-panel label="选项卡1" name="panel1">内容1</v-tab-panel>
         <v-tab-panel label="选项卡2" name="panel2">内容2</v-tab-panel>
         <v-tab-panel label="选项卡3" name="panel3">内容3</v-tab-panel>
@@ -56,12 +62,16 @@ export default {
       switchValue2: true,
       switchValue3: false,
       switchValue4: true,
-      inputValue: 'vimi'
+      inputValue: 'vimi',
+      tabValue: 'panel1'
     }
   },
   methods: {
     handleSwitch1 (value) {
       console.log(this.switchValue1)
+    },
+    handleSelectTabs (value) {
+      this.tabValue = value
     }
   }
 }
