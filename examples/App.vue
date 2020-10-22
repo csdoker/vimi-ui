@@ -103,6 +103,7 @@ export default {
 }
 .container .item {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 10px;
 }
 </style>
