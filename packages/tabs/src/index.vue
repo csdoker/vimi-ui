@@ -98,7 +98,8 @@ export default {
     },
     handleChange (index) {
       if (!this.navs[index].disabled) {
-        this.activeKey = this.navs[index].name
+        // this.activeKey = this.navs[index].name
+        this.$emit('input', this.navs[index].name)
       }
     }
   },
