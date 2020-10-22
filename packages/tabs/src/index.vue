@@ -48,9 +48,15 @@ export default {
       return this.$children.filter(item => item.$options.name === 'VTabPanel')
     },
     initTabs () {
+      this.getActiveKey()
       this.updateNav()
       this.updatePanel()
       this.updateBar()
+    },
+    getActiveKey () {
+      if (!this.activeKey) {
+        this.activeKey = this.getTabs()[0].name
+      }
     },
     updateNav () {
       this.navs = []
@@ -59,9 +65,6 @@ export default {
           label: panel.label,
           name: panel.name || index
         })
-        if (index === 0 && !this.activeKey) {
-          this.activeKey = panel.name
-        }
       })
     },
     updatePanel () {
@@ -78,9 +81,9 @@ export default {
     updateBar () {
       this.$nextTick(() => {
         const index = this.navs.findIndex(nav => nav.name === this.activeKey)
-        const tabNavs = this.$refs.tabNavs.querySelectorAll('.v-tab-nav')
+        const $$tabNavs = this.$refs.tabNavs.querySelectorAll('.v-tab-nav')
         if (index >= 0) {
-          const { offsetWidth, offsetLeft } = tabNavs[index]
+          const { offsetWidth, offsetLeft } = $$tabNavs[index]
           this.$refs.tabBar.style.width = `${offsetWidth}px`
           this.$refs.tabBar.style.transform = `translateX(${offsetLeft}px)`
         }
