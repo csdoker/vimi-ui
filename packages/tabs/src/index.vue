@@ -11,7 +11,7 @@
       >
       <span class="v-tab-bar" ref="tabBar"></span>
     </div>
-    <div class="v-tab-panels" :class="{'animated': animate}" ref="tabPanels">
+    <div class="v-tab-panels" :class="{'animated': animate}" :style="panelStyle" ref="tabPanels">
       <slot></slot>
     </div>
   </div>
@@ -37,8 +37,16 @@ export default {
       this.activeKey = val
     },
     activeKey () {
-      this.updatePanel()
       this.updateBar()
+    }
+  },
+  computed: {
+    panelStyle () {
+      const index = this.navs.findIndex(nav => nav.name === this.activeKey)
+      if (index < 0) return {}
+      return {
+        transform: `translateX(-${index * 100}%)`
+      }
     }
   },
   data () {
@@ -53,7 +61,6 @@ export default {
       this.getPanels()
       this.getNavs()
       this.getActiveKey()
-      this.updatePanel()
       this.updateBar()
     },
     getPanels () {
@@ -73,17 +80,6 @@ export default {
       if (!this.activeKey) {
         this.activeKey = this.navs[0].name
       }
-    },
-    updatePanel () {
-      this.$nextTick(() => {
-        const index = this.navs.findIndex(nav => nav.name === this.activeKey)
-        if (index !== -1) {
-          this.$refs.tabPanels.style.transform = `translateX(-${index * 100}%)`
-          this.panels.forEach(
-            panel => (panel.visible = panel.name === this.activeKey)
-          )
-        }
-      })
     },
     updateBar () {
       this.$nextTick(() => {

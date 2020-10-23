@@ -43,7 +43,7 @@
         <v-button @click="handleSelectTabs('panel3')">选项卡3</v-button>
         <v-button @click="handleSelectTabs('panel4')">选项卡4</v-button>
       </div>
-      <v-tabs v-model="tabValue" :animate="false">
+      <v-tabs v-model="tabValue" :animate="true">
         <v-tab-panel label="选项卡1" name="panel1">内容1</v-tab-panel>
         <v-tab-panel label="选项卡2" name="panel2" disabled>内容2</v-tab-panel>
         <v-tab-panel label="选项卡3" name="panel3">内容3</v-tab-panel>

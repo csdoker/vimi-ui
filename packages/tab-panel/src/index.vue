@@ -28,9 +28,9 @@ export default {
       this.tabs.initTabs()
     }
   },
-  data () {
-    return {
-      visible: false
+  computed: {
+    visible () {
+      return this.name === this.tabs.activeKey
     }
   }
 }
