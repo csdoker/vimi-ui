@@ -3,7 +3,7 @@
     <div class="v-tab-navs" ref="tabNavs">
       <span
         class="v-tab-nav"
-        :class="{'active': item.name === activeKey, 'disabled': item.disabled}"
+        :class="{ active: item.name === activeKey, disabled: item.disabled }"
         v-for="(item, index) in navs"
         :key="index"
         @click="handleChange(index)"
@@ -11,7 +11,7 @@
       >
       <span class="v-tab-bar" ref="tabBar"></span>
     </div>
-    <div class="v-tab-panels" :class="{'animated': animate}" :style="panelStyle" ref="tabPanels">
+    <div class="v-tab-panels" :class="{ animated: animate }" ref="tabPanels">
       <slot></slot>
     </div>
   </div>
@@ -38,43 +38,33 @@ export default {
     },
     activeKey () {
       this.updateBar()
-    }
-  },
-  computed: {
-    panelStyle () {
-      const index = this.navs.findIndex(nav => nav.name === this.activeKey)
-      if (index < 0) return {}
-      return {
-        transform: `translateX(-${index * 100}%)`
-      }
+      this.updatePanel()
     }
   },
   data () {
     return {
       navs: [],
-      panels: [],
       activeKey: this.value
     }
   },
   methods: {
     initTabs () {
-      this.getPanels()
       this.getNavs()
       this.getActiveKey()
       this.updateBar()
-    },
-    getPanels () {
-      this.panels = this.$children.filter(item => item.$options.name === 'VTabPanel')
+      this.updatePanel()
     },
     getNavs () {
       this.navs = []
-      this.panels.forEach((panel, index) => {
-        this.navs.push({
-          label: panel.label,
-          name: panel.name || index,
-          disabled: panel.disabled
+      this.$children
+        .filter(item => item.$options.name === 'VTabPanel')
+        .forEach((panel, index) => {
+          this.navs.push({
+            label: panel.label,
+            name: panel.name || index,
+            disabled: panel.disabled
+          })
         })
-      })
     },
     getActiveKey () {
       if (!this.activeKey) {
@@ -83,7 +73,7 @@ export default {
     },
     updateBar () {
       this.$nextTick(() => {
-        const index = this.navs.findIndex(nav => nav.name === this.activeKey)
+        const index = this.navs.map(nav => nav.name).indexOf(this.activeKey)
         const $$tabNavs = this.$refs.tabNavs.querySelectorAll('.v-tab-nav')
         if (index !== -1) {
           const { offsetWidth, offsetLeft } = $$tabNavs[index]
@@ -91,6 +81,12 @@ export default {
           this.$refs.tabBar.style.transform = `translateX(${offsetLeft}px)`
         }
       })
+    },
+    updatePanel () {
+      const index = this.navs.map(nav => nav.name).indexOf(this.activeKey)
+      if (index !== -1) {
+        this.$refs.tabPanels.style.transform = `translateX(-${index * 100}%)`
+      }
     },
     handleChange (index) {
       if (!this.navs[index].disabled) {
