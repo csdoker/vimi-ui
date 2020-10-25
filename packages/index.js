@@ -3,6 +3,7 @@ import Icon from './icon'
 import Button from './button'
 import ButtonGroup from './button-group'
 import Switch from './switch'
+import Checkbox from './checkbox'
 import Input from './input'
 import Tabs from './tabs'
 import TabPanel from './tab-panel'
@@ -12,6 +13,7 @@ const components = {
   Button,
   ButtonGroup,
   Switch,
+  Checkbox,
   Input,
   Tabs,
   TabPanel
@@ -35,6 +37,7 @@ export {
   Button,
   ButtonGroup,
   Switch,
+  Checkbox,
   Input,
   Tabs,
   TabPanel

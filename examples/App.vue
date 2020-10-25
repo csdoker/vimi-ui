@@ -28,6 +28,12 @@
       </div>
     </div>
     <div class="container">
+      <h2>Checkbox 多选框</h2>
+      <div class="item">
+        <v-checkbox></v-checkbox>
+      </div>
+    </div>
+    <div class="container">
       <h2>Input 输入框</h2>
       <div class="item">
         <v-input v-model="inputValue" style="width: 200px; margin-right: 20px;"></v-input>
