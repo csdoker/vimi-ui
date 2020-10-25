@@ -20,14 +20,6 @@ export default {
       default: false
     }
   },
-  watch: {
-    name () {
-      this.tabs.initTabs()
-    },
-    label () {
-      this.tabs.initTabs()
-    }
-  },
   computed: {
     visible () {
       return this.name === this.tabs.activeKey

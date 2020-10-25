@@ -44,32 +44,23 @@ export default {
   data () {
     return {
       navs: [],
-      activeKey: this.value
+      activeKey: null
     }
   },
   methods: {
     initTabs () {
       this.getNavs()
-      this.getActiveKey()
-      this.updateBar()
-      this.updatePanel()
+      this.activeKey = this.value || this.navs[0].name
     },
     getNavs () {
-      this.navs = []
-      this.$children
-        .filter(item => item.$options.name === 'VTabPanel')
-        .forEach((panel, index) => {
-          this.navs.push({
-            label: panel.label,
-            name: panel.name || index,
-            disabled: panel.disabled
-          })
-        })
-    },
-    getActiveKey () {
-      if (!this.activeKey) {
-        this.activeKey = this.navs[0].name
-      }
+      const panels = this.$children.filter(item => item.$options.name === 'VTabPanel')
+      this.navs = panels.map((panel, index) => {
+        return {
+          label: panel.label,
+          name: panel.name || index,
+          disabled: panel.disabled
+        }
+      })
     },
     updateBar () {
       this.$nextTick(() => {
