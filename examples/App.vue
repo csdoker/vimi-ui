@@ -30,7 +30,7 @@
     <div class="container">
       <h2>Checkbox 多选框</h2>
       <div class="item">
-        <v-checkbox></v-checkbox>
+        <v-checkbox v-model="checkboxValue"></v-checkbox>
       </div>
     </div>
     <div class="container">
@@ -68,6 +68,7 @@ export default {
       switchValue2: true,
       switchValue3: false,
       switchValue4: true,
+      checkboxValue: false,
       inputValue: 'vimi',
       tabValue: 'panel1'
     }

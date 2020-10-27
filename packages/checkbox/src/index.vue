@@ -1,10 +1,12 @@
 <template>
-  <label class="v-checkbox">
+  <label class="v-checkbox" :class="{ checked: this.value }">
     <span class="v-checkbox-wrapper">
       <span class="v-checkbox-inner"></span>
-      <input type="checkbox" class="v-checkbox-input" />
+      <input type="checkbox" :checked="value" @change="handleChange" class="v-checkbox-input" />
     </span>
-    <span class="v-checkbox-label"></span>
+    <span class="v-checkbox-label">
+      <slot></slot>
+    </span>
   </label>
 </template>
 
@@ -19,6 +21,13 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    }
+  },
+  methods: {
+    handleChange (event) {
+      const { checked } = event.target
+      this.$emit('input', checked)
+      this.$emit('change', checked)
     }
   }
 }
