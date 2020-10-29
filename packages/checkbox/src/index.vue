@@ -1,10 +1,10 @@
 <template>
-  <label class="v-checkbox" :class="{ checked: this.value }">
+  <label class="v-checkbox" :class="{ checked: this.value, disabled: this.disabled }">
     <span class="v-checkbox-wrapper">
       <span class="v-checkbox-inner"></span>
-      <input type="checkbox" :checked="value" @change="handleChange" class="v-checkbox-input" />
+      <input type="checkbox" :checked="value" :disabled="disabled" @change="handleChange" class="v-checkbox-input" />
     </span>
-    <span class="v-checkbox-label">
+    <span class="v-checkbox-label" v-if="$slots.default">
       <slot></slot>
     </span>
   </label>

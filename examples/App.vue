@@ -30,7 +30,10 @@
     <div class="container">
       <h2>Checkbox 多选框</h2>
       <div class="item">
-        <v-checkbox v-model="checkboxValue"></v-checkbox>
+        <v-checkbox v-model="checkboxValue1"></v-checkbox>
+        <v-checkbox v-model="checkboxValue2" @change="handleCheckbox">备选项1</v-checkbox>
+        <v-checkbox v-model="checkboxValue3" :disabled="true">备选项2</v-checkbox>
+        <v-checkbox v-model="checkboxValue4" :disabled="true">备选项3</v-checkbox>
       </div>
     </div>
     <div class="container">
@@ -68,7 +71,10 @@ export default {
       switchValue2: true,
       switchValue3: false,
       switchValue4: true,
-      checkboxValue: false,
+      checkboxValue1: false,
+      checkboxValue2: true,
+      checkboxValue3: false,
+      checkboxValue4: true,
       inputValue: 'vimi',
       tabValue: 'panel1'
     }
@@ -79,6 +85,9 @@ export default {
     },
     handleSelectTabs (value) {
       this.tabValue = value
+    },
+    handleCheckbox (value) {
+      console.log(this.checkboxValue2)
     }
   }
 }
