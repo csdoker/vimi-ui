@@ -59,6 +59,12 @@
         <v-tab-panel label="选项卡4" name="panel4">内容4</v-tab-panel>
       </v-tabs>
     </div>
+    <div class="container">
+      <h2>Pager 分页</h2>
+      <div class="item">
+        <v-pager></v-pager>
+      </div>
+    </div>
   </div>
 </template>
 

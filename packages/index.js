@@ -7,6 +7,7 @@ import Checkbox from './checkbox'
 import Input from './input'
 import Tabs from './tabs'
 import TabPanel from './tab-panel'
+import Pager from './pager'
 
 const components = {
   Icon,
@@ -16,7 +17,8 @@ const components = {
   Checkbox,
   Input,
   Tabs,
-  TabPanel
+  TabPanel,
+  Pager
 }
 
 const install = function (Vue, opts = {}) {
@@ -40,7 +42,8 @@ export {
   Checkbox,
   Input,
   Tabs,
-  TabPanel
+  TabPanel,
+  Pager
 }
 
 export default {
