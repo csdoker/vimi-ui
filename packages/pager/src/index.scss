@@ -4,6 +4,9 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  &.hide {
+    display: none;
+  }
   .pager-prev,
   .pager-item,
   .pager-more,

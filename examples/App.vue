@@ -62,7 +62,10 @@
     <div class="container">
       <h2>Pager 分页</h2>
       <div class="item">
-        <v-pager></v-pager>
+        <v-button @click="handleAddPage">页码+1</v-button>
+      </div>
+      <div class="item">
+        <v-pager :total="88" :current.sync="currentPage" :page-size="10" @current-change="handleChangePage"></v-pager>
       </div>
     </div>
   </div>
@@ -82,7 +85,8 @@ export default {
       checkboxValue3: false,
       checkboxValue4: true,
       inputValue: 'vimi',
-      tabValue: 'panel1'
+      tabValue: 'panel1',
+      currentPage: 1
     }
   },
   methods: {
@@ -94,6 +98,13 @@ export default {
     },
     handleCheckbox (value) {
       console.log(this.checkboxValue2)
+    },
+    handleChangePage (value) {
+      console.log('----1----', value)
+      console.log('----2----', this.currentPage)
+    },
+    handleAddPage () {
+      this.currentPage = this.currentPage + 1
     }
   }
 }
