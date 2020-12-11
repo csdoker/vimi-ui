@@ -4,7 +4,11 @@
   "description": "A Vue.js 2.0 UI Toolkit for Web",
   "main": "lib/vimi-ui.umd.min.js",
   "style": "lib/vimi-ui.css",
-  "files": ["lib", "packages", "src"],
+  "files": [
+    "lib",
+    "packages",
+    "src"
+  ],
   "keywords": [
     "vimi-ui"
   ],
@@ -14,6 +18,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lib": "vue-cli-service build --target lib --name vimi-ui --dest lib packages/index.js",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
@@ -38,7 +44,8 @@
     "eslint-plugin-vue": "^6.2.2",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "vuepress": "^1.7.1"
   },
   "repository": {
     "type": "git",
