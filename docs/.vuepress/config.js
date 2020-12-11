@@ -1,20 +1,20 @@
 module.exports = {
   title: "vimi-ui",
-  description: "一套基于原生JavaScript开发的组件库，无依赖、体积小、简单易用",
+  description: "A Vue.js 2.0 UI Toolkit for Web",
   base: "/vimi-ui/",
   themeConfig: {
     nav: [
-      { text: "主页", link: "/" },
+      { text: "Home", link: "/" },
       { text: "Github", link: "https://github.com/csdoker/vimi-ui" }
     ],
     sidebar: [
       {
-        title: "使用",
+        title: "Usage",
         collapsable: false,
         children: ["/get-started/"]
       },
       {
-        title: "组件",
+        title: "Components",
         collapsable: false,
         children: [
           "/components/button"
