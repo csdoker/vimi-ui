@@ -2,6 +2,7 @@
 
 const fs = require('fs')
 const path = require('path')
+const merge = require('webpack-merge')
 
 function resolve (dir) {
   return path.resolve(__dirname, dir)
@@ -25,14 +26,7 @@ function getEntries (path) {
   return entries
 }
 
-const devConfig = {
-  pages: {
-    index: {
-      entry: 'examples/main.js',
-      template: 'public/index.html',
-      filename: 'index.html'
-    }
-  },
+const baseConfig = {
   chainWebpack: config => {
     config.resolve.alias
       .set('~', resolve('packages'))
@@ -42,15 +36,23 @@ const devConfig = {
 
     config.module
       .rule('js')
-      .include.add(/packages/)
-      .end()
-      .include.add(/examples/)
+      .include.add('/packages')
       .end()
       .use('babel')
       .loader('babel-loader')
       .tap(options => {
         return options
       })
+  }
+}
+
+const devConfig = {
+  pages: {
+    index: {
+      entry: 'examples/main.js',
+      template: 'public/index.html',
+      filename: 'index.html'
+    }
   }
 }
 
@@ -72,22 +74,6 @@ const buildConfig = {
     }
   },
   chainWebpack: config => {
-    config.resolve.alias
-      .set('~', resolve('packages'))
-      .set('@', resolve('examples'))
-      .set('assets', resolve('src/assets'))
-      .set('styles', resolve('src/assets/styles'))
-
-    config.module
-      .rule('js')
-      .include.add('/packages')
-      .end()
-      .use('babel')
-      .loader('babel-loader')
-      .tap(options => {
-        return options
-      })
-
     config.optimization.delete('splitChunks')
     config.plugins.delete('copy')
     config.plugins.delete('html')
@@ -100,5 +86,4 @@ const buildConfig = {
   productionSourceMap: false
 }
 
-module.exports =
-  process.env.NODE_ENV === 'development' ? devConfig : buildConfig
+module.exports = merge(baseConfig, process.env.NODE_ENV === 'development' ? devConfig : buildConfig)
