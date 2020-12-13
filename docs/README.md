@@ -28,13 +28,49 @@ npm install vimi-ui -S
 
 ## Quick Start
 
+### Global Use
+
 ```javascript
 import Vue from 'vue'
 import vimi from 'vimi-ui'
-Vue.use(vimi)
+import "vimi-ui/lib/styles/index.css";
 
-// or
+Vue.use(vimi)
+```
+
+### On-demand Loading
+
+Firstly, you should install babel-plugin-component in your project.
+
+```bash
+npm i babel-plugin-component -D
+```
+
+Then, configure your .babelrc file like this
+
+```json
+{
+  "plugins": [
+    [
+      "component",
+      {
+        "libraryName": "vimi-ui",
+        "styleLibrary": {
+          "name": "styles",
+          "base": false
+        }
+      }
+    ]
+  ]
+}
+```
+
+Finally, you can import component on demand, and you don't need to care about importing styles, the babel plugin will do it automaticly.
+
+```javascript
+import Vue from 'vue'
 import { Button } from 'vimi-ui'
+
 Vue.component(Button.name, Button)
 ```
 
@@ -47,10 +83,10 @@ Vue.component(Button.name, Button)
 You can clone this project to the local and run it.
 
 ```bash
-$ git clone https://github.com/csdoker/vimi-ui.git
-$ cd vimi-ui
-$ npm install
-$ npm run serve
+git clone https://github.com/csdoker/vimi-ui.git
+cd vimi-ui
+npm install
+npm run serve
 ```
 
 ## Todo List
