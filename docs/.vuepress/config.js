@@ -9,12 +9,12 @@ module.exports = {
     ],
     sidebar: [
       {
-        title: "Usage",
+        title: "使用",
         collapsable: false,
         children: ["/get-started/"]
       },
       {
-        title: "Components",
+        title: "组件",
         collapsable: false,
         children: [
           "/components/button"

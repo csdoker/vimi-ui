@@ -29,12 +29,18 @@ npm install vimi-ui -S
 ## Quick Start
 
 ```javascript
+// Global
 import Vue from 'vue'
 import vimi from 'vimi-ui'
+import 'vimi-ui/lib/vimi-ui.css'
+
 Vue.use(vimi)
 
-// or
+// On demand
+import Vue from 'vue'
 import { Button } from 'vimi-ui'
+import 'vimi-ui/lib/vimi-ui.css'
+
 Vue.component(Button.name, Button)
 ```
 
