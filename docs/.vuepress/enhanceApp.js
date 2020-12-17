@@ -1,6 +1,6 @@
-import vimi from '../../lib/vimi-ui.umd.min'
+import vimi from '../../lib/index'
 // import { Button } from '../../lib/vimi-ui.umd.min'
-import '../../lib/vimi-ui.css'
+// import '../../lib/styles/index.css'
 
 export default ({
   Vue
