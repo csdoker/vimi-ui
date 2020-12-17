@@ -1,4 +1,4 @@
-import VPager from './src/index.vue'
+import VPager from './pager.vue'
 
 VPager.install = function (Vue) {
   Vue.component(VPager.name, VPager)

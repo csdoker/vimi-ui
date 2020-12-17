@@ -1,4 +1,4 @@
-import VSwitch from './src/index.vue'
+import VSwitch from './switch.vue'
 
 VSwitch.install = function (Vue) {
   Vue.component(VSwitch.name, VSwitch)

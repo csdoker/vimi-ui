@@ -1,4 +1,4 @@
-import VIcon from './src/index.vue'
+import VIcon from './icon.vue'
 
 VIcon.install = function (Vue) {
   Vue.component(VIcon.name, VIcon)

@@ -1,4 +1,4 @@
-import VTabs from './src/index.vue'
+import VTabs from './tabs.vue'
 
 VTabs.install = function (Vue) {
   Vue.component(VTabs.name, VTabs)

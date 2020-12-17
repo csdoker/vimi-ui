@@ -1,4 +1,4 @@
-import VInput from './src/index.vue'
+import VInput from './input.vue'
 
 VInput.install = function (Vue) {
   Vue.component(VInput.name, VInput)

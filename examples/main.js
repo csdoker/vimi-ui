@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-import vimi from '../packages'
+import vimi from '../src/index'
+import '../src/styles/index.scss'
 Vue.use(vimi)
 
 // import vimi from 'vimi-ui'

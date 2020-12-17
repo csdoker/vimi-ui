@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+.v-tab-panel {
+  padding: 16px 0;
+  font-size: 14px;
+  width: 100%;
+  transition: opacity 0.3s;
+  opacity: 1;
+  outline: 0;
+  flex-shrink: 0;
+  visibility: hidden;
+  &.active {
+    visibility: visible;
+  }
+}
+&.animated {
+  will-change: transform;
+  transition: transform 0.3s ease-in-out;
+}
