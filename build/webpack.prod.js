@@ -14,7 +14,7 @@ module.exports = merge(webpackBaseConfig, {
   output: {
     path: path.resolve(__dirname, '../lib'),
     publicPath: '/lib/',
-    filename: 'vimi-ui.min.js',
+    filename: 'index.js',
     library: 'vimi-ui',
     libraryTarget: 'umd',
     umdNamedDefine: true

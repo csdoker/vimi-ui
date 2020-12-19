@@ -1,8 +1,8 @@
 {
   "name": "vimi-ui",
-  "version": "0.2.9",
+  "version": "0.3.0",
   "description": "A Vue.js 2.0 UI Toolkit for Web",
-  "main": "lib/vimi-ui.min.js",
+  "main": "lib/index.js",
   "files": [
     "lib",
     "packages",

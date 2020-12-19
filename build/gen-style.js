@@ -11,7 +11,7 @@ function buildCss (cb) {
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(cleanCSS())
-    .pipe(rename('vimi-ui.css'))
+    .pipe(rename('index.css'))
     .pipe(gulp.dest('../lib/styles'))
   cb()
 }
