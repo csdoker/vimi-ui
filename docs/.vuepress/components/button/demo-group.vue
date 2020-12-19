@@ -1,0 +1,9 @@
+<template>
+  <demo-block>
+    <v-button-group>
+      <v-button>上一页</v-button>
+      <v-button>更多</v-button>
+      <v-button>下一页</v-button>
+    </v-button-group>
+  </demo-block>
+</template>

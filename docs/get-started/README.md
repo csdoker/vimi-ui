@@ -5,7 +5,6 @@ title: 快速开始
 ### Global Use
 
 ```javascript
-// Global
 import Vue from 'vue'
 import vimi from 'vimi-ui'
 import "vimi-ui/lib/styles/index.css";

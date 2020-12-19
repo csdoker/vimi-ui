@@ -31,7 +31,6 @@ npm install vimi-ui -S
 ### Global Use
 
 ```javascript
-// Global
 import Vue from 'vue'
 import vimi from 'vimi-ui'
 import "vimi-ui/lib/styles/index.css";
