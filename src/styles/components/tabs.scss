@@ -39,5 +39,9 @@
     display: flex;
     flex-direction: row;
     transform: none;
+    &.animated {
+      will-change: transform;
+      transition: transform 0.3s ease-in-out;
+    }
   }
 }

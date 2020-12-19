@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import VIcon from '~/icon/src/index.vue'
+import VIcon from '../icon/icon.vue'
 
 export default {
   name: 'VButton',

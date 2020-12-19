@@ -1,0 +1,11 @@
+{
+  "button": "packages/button/index.js",
+  "button-group": "packages/button-group/index.js",
+  "checkbox": "packages/checkbox/index.js",
+  "icon": "packages/icon/index.js",
+  "input": "packages/input/index.js",
+  "pager": "packages/pager/index.js",
+  "switch": "packages/switch/index.js",
+  "tabs": "packages/tabs/index.js",
+  "tab-panel": "packages/tab-panel/index.js"
+}
