@@ -19,7 +19,8 @@ module.exports = {
         children: [
           "/components/button",
           "/components/checkbox",
-          "/components/input"
+          "/components/input",
+          "/components/pager"
         ]
       }
     ]

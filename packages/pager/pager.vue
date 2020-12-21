@@ -61,7 +61,9 @@ export default {
   },
   watch: {
     current (value) {
-      this.currentPage = value
+      if (value >= 1 && value <= this.pageCount) {
+        this.currentPage = value
+      }
     },
     currentPage () {
       this.$emit('current-change', this.currentPage)
@@ -105,14 +107,14 @@ export default {
   },
   methods: {
     handlePrevPage () {
-      this.currentPage = this.currentPage - 1
-      if (this.currentPage >= 1) {
+      if (this.currentPage > 1) {
+        this.currentPage = this.currentPage - 1
         this.$emit('update:current', this.currentPage)
       }
     },
     handleNextPage () {
-      this.currentPage = this.currentPage + 1
-      if (this.currentPage <= this.pageCount) {
+      if (this.currentPage < this.pageCount) {
+        this.currentPage = this.currentPage + 1
         this.$emit('update:current', this.currentPage)
       }
     },
