@@ -18,7 +18,8 @@ module.exports = {
         collapsable: false,
         children: [
           "/components/button",
-          "/components/checkbox"
+          "/components/checkbox",
+          "/components/input"
         ]
       }
     ]
