@@ -20,7 +20,8 @@ module.exports = {
           "/components/button",
           "/components/checkbox",
           "/components/input",
-          "/components/pager"
+          "/components/pager",
+          "/components/switch"
         ]
       }
     ]
