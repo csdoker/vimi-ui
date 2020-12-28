@@ -29,7 +29,7 @@ export default {
     },
     animate: {
       type: Boolean,
-      default: true
+      default: false
     }
   },
   watch: {
@@ -83,7 +83,7 @@ export default {
       if (!this.navs[index].disabled) {
         this.activeKey = this.navs[index].name
         this.$emit('input', this.navs[index].name)
-        this.$emit('click', this.navs[index].name)
+        this.$emit('tab-click', this.$children[index])
       }
     }
   },

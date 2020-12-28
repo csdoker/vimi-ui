@@ -21,7 +21,8 @@ module.exports = {
           "/components/checkbox",
           "/components/input",
           "/components/pager",
-          "/components/switch"
+          "/components/switch",
+          "/components/tabs"
         ]
       }
     ]
