@@ -68,6 +68,17 @@
         <v-pager :total="88" :current.sync="currentPage" :page-size="10" @current-change="handleChangePage"></v-pager>
       </div>
     </div>
+    <div class="container">
+      <h2>Carousel 走马灯</h2>
+      <div class="item">
+        <v-carousel height="300">
+          <v-carousel-item></v-carousel-item>
+          <v-carousel-item></v-carousel-item>
+          <v-carousel-item></v-carousel-item>
+          <v-carousel-item></v-carousel-item>
+        </v-carousel>
+      </div>
+    </div>
   </div>
 </template>
 
