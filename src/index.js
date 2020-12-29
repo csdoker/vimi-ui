@@ -8,6 +8,8 @@ import Input from '../packages/input'
 import Tabs from '../packages/tabs'
 import TabPanel from '../packages/tab-panel'
 import Pager from '../packages/pager'
+import Carousel from '../packages/carousel'
+import CarouselItem from '../packages/carousel-item'
 
 const components = {
   Icon,
@@ -18,7 +20,9 @@ const components = {
   Input,
   Tabs,
   TabPanel,
-  Pager
+  Pager,
+  Carousel,
+  CarouselItem
 }
 
 const install = function (Vue, opts = {}) {

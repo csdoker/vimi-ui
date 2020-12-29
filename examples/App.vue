@@ -72,10 +72,9 @@
       <h2>Carousel 走马灯</h2>
       <div class="item">
         <v-carousel height="300">
-          <v-carousel-item></v-carousel-item>
-          <v-carousel-item></v-carousel-item>
-          <v-carousel-item></v-carousel-item>
-          <v-carousel-item></v-carousel-item>
+          <v-carousel-item v-for="item in 4" :key="item">
+            <div class="carousel-content">{{ item }}</div>
+          </v-carousel-item>
         </v-carousel>
       </div>
     </div>
@@ -152,5 +151,19 @@ export default {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 10px;
+}
+.carousel-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #fff;
+  font-size: 14px;
+  &:nth-child(2n) {
+    background-color: #99a9bf;
+  }
+  &:nth-child(2n+1) {
+    background-color: #d3dce6;
+  }
 }
 </style>
