@@ -1,8 +1,18 @@
+@charset "UTF-8";
+
 .v-carousel {
   position: relative;
   overflow: hidden;
   .v-carousel-list {
     height: 300px;
+    &.left {
+      transform: translateX(-100%);
+      transition: all .4s;
+    }
+    &.right {
+      transform: translateX(100%);
+      transition: all .4s;
+    }
   }
   .v-carousel-arrow {
     position: absolute;
