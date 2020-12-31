@@ -9,5 +9,7 @@
   "tabs": "packages/tabs/index.js",
   "tab-panel": "packages/tab-panel/index.js",
   "carousel": "packages/carousel/index.js",
-  "carousel-item": "packages/carousel-item/index.js"
+  "carousel-item": "packages/carousel-item/index.js",
+  "collapse": "packages/collapse/index.js",
+  "collapse-item": "packages/collapse-item/index.js"
 }

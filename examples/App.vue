@@ -21,9 +21,24 @@
     <div class="container">
       <h2>Switch 开关</h2>
       <div class="item">
-        <v-switch v-model="switchValue1" active-value="active" inactive-value="inactiveValue" @change="handleSwitch1" style="margin-right: 20px;"></v-switch>
-        <v-switch v-model="switchValue2" active-color="#67C23A" inactive-color="#F56C6C" style="margin-right: 20px;"></v-switch>
-        <v-switch v-model="switchValue3" disabled style="margin-right: 20px;"></v-switch>
+        <v-switch
+          v-model="switchValue1"
+          active-value="active"
+          inactive-value="inactiveValue"
+          @change="handleSwitch1"
+          style="margin-right: 20px;"
+        ></v-switch>
+        <v-switch
+          v-model="switchValue2"
+          active-color="#67C23A"
+          inactive-color="#F56C6C"
+          style="margin-right: 20px;"
+        ></v-switch>
+        <v-switch
+          v-model="switchValue3"
+          disabled
+          style="margin-right: 20px;"
+        ></v-switch>
         <v-switch v-model="switchValue4" disabled></v-switch>
       </div>
     </div>
@@ -31,17 +46,30 @@
       <h2>Checkbox 多选框</h2>
       <div class="item">
         <v-checkbox v-model="checkboxValue1"></v-checkbox>
-        <v-checkbox v-model="checkboxValue2" @change="handleCheckbox">备选项1</v-checkbox>
-        <v-checkbox v-model="checkboxValue3" :disabled="true">备选项2</v-checkbox>
-        <v-checkbox v-model="checkboxValue4" :disabled="true">备选项3</v-checkbox>
+        <v-checkbox v-model="checkboxValue2" @change="handleCheckbox"
+          >备选项1</v-checkbox
+        >
+        <v-checkbox v-model="checkboxValue3" :disabled="true"
+          >备选项2</v-checkbox
+        >
+        <v-checkbox v-model="checkboxValue4" :disabled="true"
+          >备选项3</v-checkbox
+        >
       </div>
     </div>
     <div class="container">
       <h2>Input 输入框</h2>
       <div class="item">
-        <v-input v-model="inputValue" style="width: 200px; margin-right: 20px;"></v-input>
+        <v-input
+          v-model="inputValue"
+          style="width: 200px; margin-right: 20px;"
+        ></v-input>
         <v-input disabled style="width: 200px; margin-right: 20px;"></v-input>
-        <v-input maxlength="5" placeholder="最大输入长度为5个字符" style="width: 200px"></v-input>
+        <v-input
+          maxlength="5"
+          placeholder="最大输入长度为5个字符"
+          style="width: 200px"
+        ></v-input>
       </div>
     </div>
     <div class="container">
@@ -65,7 +93,12 @@
         <v-button @click="handleAddPage">页码+1</v-button>
       </div>
       <div class="item">
-        <v-pager :total="88" :current.sync="currentPage" :page-size="10" @current-change="handleChangePage"></v-pager>
+        <v-pager
+          :total="88"
+          :current.sync="currentPage"
+          :page-size="10"
+          @current-change="handleChangePage"
+        ></v-pager>
       </div>
     </div>
     <div class="container">
@@ -75,6 +108,42 @@
           <div class="carousel-content">{{ item }}</div>
         </v-carousel-item>
       </v-carousel>
+    </div>
+    <div class="container">
+      <h2>Collapse 折叠面板</h2>
+      <v-collapse v-model="activeNames" @change="handleChange">
+        <v-collapse-item title="一致性 Consistency" name="1">
+          <div>
+            与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；
+          </div>
+          <div>
+            在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。
+          </div>
+        </v-collapse-item>
+        <v-collapse-item title="反馈 Feedback" name="2">
+          <div>
+            控制反馈：通过界面样式和交互动效让用户可以清晰的感知自己的操作；
+          </div>
+          <div>页面反馈：操作后，通过页面元素的变化清晰地展现当前状态。</div>
+        </v-collapse-item>
+        <v-collapse-item title="效率 Efficiency" name="3">
+          <div>简化流程：设计简洁直观的操作流程；</div>
+          <div>
+            清晰明确：语言表达清晰且表意明确，让用户快速理解进而作出决策；
+          </div>
+          <div>
+            帮助用户识别：界面简单直白，让用户快速识别而非回忆，减少用户记忆负担。
+          </div>
+        </v-collapse-item>
+        <v-collapse-item title="可控 Controllability" name="4">
+          <div>
+            用户决策：根据场景可给予用户操作建议或安全提示，但不能代替用户进行决策；
+          </div>
+          <div>
+            结果可控：用户可以自由的进行操作，包括撤销、回退和终止当前操作等。
+          </div>
+        </v-collapse-item>
+      </v-collapse>
     </div>
   </div>
 </template>
@@ -94,7 +163,8 @@ export default {
       checkboxValue4: true,
       inputValue: 'vimi',
       tabValue: 'panel1',
-      currentPage: 1
+      currentPage: 1,
+      activeNames: ['2']
     }
   },
   methods: {
@@ -155,7 +225,7 @@ export default {
     &:nth-child(2n) {
       background-color: #99a9bf;
     }
-    &:nth-child(2n+1) {
+    &:nth-child(2n + 1) {
       background-color: #d3dce6;
     }
     .carousel-content {

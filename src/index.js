@@ -10,6 +10,8 @@ import TabPanel from '../packages/tab-panel'
 import Pager from '../packages/pager'
 import Carousel from '../packages/carousel'
 import CarouselItem from '../packages/carousel-item'
+import Collapse from '../packages/collapse'
+import CollapseItem from '../packages/collapse-item'
 
 const components = {
   Icon,
@@ -22,7 +24,9 @@ const components = {
   TabPanel,
   Pager,
   Carousel,
-  CarouselItem
+  CarouselItem,
+  Collapse,
+  CollapseItem
 }
 
 const install = function (Vue, opts = {}) {
