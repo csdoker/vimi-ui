@@ -98,7 +98,7 @@ npm run serve
 - [x] Icon
 - [x] Tabs
 - [x] Pager
-- [ ] Carousel
+- [x] Carousel
 - [ ] Tree
 - [ ] Preview demo and docs online
 - [ ] Use Vue3 to refactor component（Doing and need help）
