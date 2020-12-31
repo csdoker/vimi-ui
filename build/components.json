@@ -7,5 +7,7 @@
   "pager": "packages/pager/index.js",
   "switch": "packages/switch/index.js",
   "tabs": "packages/tabs/index.js",
-  "tab-panel": "packages/tab-panel/index.js"
+  "tab-panel": "packages/tab-panel/index.js",
+  "carousel": "packages/carousel/index.js",
+  "carousel-item": "packages/carousel-item/index.js"
 }
