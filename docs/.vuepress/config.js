@@ -22,7 +22,8 @@ module.exports = {
           "/components/input",
           "/components/pager",
           "/components/switch",
-          "/components/tabs"
+          "/components/tabs",
+          "/components/carousel"
         ]
       }
     ]
