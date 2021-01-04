@@ -1,6 +1,6 @@
 <template>
   <div class="v-carousel" @mouseenter="handleMouseEnter" @mouseleave="handleMouseLeave">
-    <div class="v-carousel-list" :style="{ height: height }" ref="carouselList">
+    <div class="v-carousel-list" :style="{ height: height }">
       <slot></slot>
     </div>
     <ul class="v-carousel-dots">
@@ -18,6 +18,8 @@
 </template>
 
 <script>
+const reflow = element => element.offsetHeight
+
 export default {
   name: 'VCarousel',
   props: {
@@ -67,19 +69,25 @@ export default {
       })
     },
     resetCarousel () {
-      this.$fromItem.setAttribute('class', 'v-carousel-item')
-      this.$toItem.setAttribute('class', 'v-carousel-item active')
-      this.$refs.carouselList.classList.remove(`${this.direction}`)
-      this.isAnimate = false
+      const callback = () => {
+        this.$fromItem.setAttribute('class', 'v-carousel-item')
+        this.$toItem.setAttribute('class', 'v-carousel-item active')
+        this.$fromItem.removeEventListener('transitionend', callback, false)
+        this.isAnimate = false
+      }
+      this.$fromItem.addEventListener('transitionend', callback, false)
     },
     moveCarousel () {
-      this.isAnimate = true
       const type = this.direction === 'left' ? 'next' : 'prev'
       this.$toItem.setAttribute('class', `v-carousel-item ${type}`)
-      this.$refs.carouselList.classList.add(`${this.direction}`)
+      reflow(this.$toItem)
+      this.$fromItem.setAttribute('class', `v-carousel-item active ${this.direction}`)
+      this.$toItem.setAttribute('class', `v-carousel-item ${type} ${this.direction}`)
+      this.resetCarousel()
     },
     setCarousel (toIndex, direction) {
       if (!this.isAnimate) {
+        this.isAnimate = true
         this.$fromItem = this.carouselItems[this.currentIndex].$el
         this.$toItem = this.carouselItems[toIndex].$el
         this.direction = direction
@@ -93,9 +101,6 @@ export default {
           this.setCarousel(this.getNextIndex(), 'left')
         }, this.interval)
       }
-    },
-    bindCarousel () {
-      this.$refs.carouselList.addEventListener('transitionend', this.resetCarousel, false)
     },
     pauseCarousel () {
       if (this.timer) {
@@ -126,12 +131,8 @@ export default {
       }
     }
   },
-  beforeDestroy () {
-    this.$refs.carouselList.removeEventListener('transitionend', this.resetCarousel, false)
-  },
   mounted () {
     this.initCarousel()
-    this.bindCarousel()
     this.playCarousel()
   }
 }

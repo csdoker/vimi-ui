@@ -7,15 +7,19 @@
   top: 0;
   width: 100%;
   height: 100%;
+  transition: all .4s;
   &.active,
   &.next,
   &.prev {
     display: block;
   }
-  &.next {
+  &.active.right, &.next {
     transform: translateX(100%);
   }
-  &.prev {
+  &.active.left, &.prev {
     transform: translateX(-100%);
+  }
+  &.active, &.next.left, &.prev.right {
+    transform: translateX(0);
   }
 }
